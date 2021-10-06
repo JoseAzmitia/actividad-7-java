@@ -5,7 +5,8 @@ public class main {
         int n = 10;
         System.out.println("Números primos:");
         System.out.println(Arrays.toString(calcularPrimos(n)));
-
+        System.out.println("Sucesión de Fibonacci:");
+        System.out.println(Arrays.toString(fibonacci(n)));
     }
 
     public static int[] calcularPrimos(int num){
@@ -22,6 +23,21 @@ public class main {
         }
         return primos;
 
+    }
+
+    public static int[] fibonacci(int num){
+        int fibonacci[] = new int[num];
+        int p = 0;
+        int f1=1;
+        int f2=1;
+        fibonacci[p] = f1;
+        for(int i=2;i<=num;i++){
+            p++;
+            fibonacci[p] = f2;
+            f2 = f1 + f2;
+            f1 = f2 - f1;
+        }
+        return  fibonacci;
     }
 
     public static Boolean esPrimo(int num)
